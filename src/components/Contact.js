@@ -10,15 +10,15 @@ const Contact = ({ data }) => {
     // Contact berisi foto, nama, telepon, dan email
     return (
     <>
-        {data.map((val,i)=>{
-            return (
-                <List key={i} sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+        {/* {data.map((val,i)=>{ */}
+            {/* return ( */}
+                <List  sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                     <ListItem alignItems="flex-start">
                         <ListItemAvatar>
-                            <Avatar alt="Remy Sharp" src={val.photo} />
+                            <Avatar alt="Remy Sharp" src={data.photo} />
                         </ListItemAvatar>
                         <ListItemText
-                        primary={val.name}
+                        primary={data.name}
                         secondary={
                             <React.Fragment>
                             <Typography
@@ -27,17 +27,17 @@ const Contact = ({ data }) => {
                                 variant="body2"
                                 color="text.primary"
                             >
-                                {val.phone}
+                                {data.phone}
                             </Typography>
-                            {val.email}
+                            {data.email}
                             </React.Fragment>
                         }
                         />
                     </ListItem>
                 </List>
-            )
+            {/* )
            
-        })}
+        })} */}
     </>
     );
 };

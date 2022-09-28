@@ -19,7 +19,11 @@ const App = () => {
 
   const addNewContact = (newContact)=>{
     let data = [...dataContact]
-    data = [...data,{name:newContact.name,phone:newContact.phone,email:newContact.email,photo:newContact.photo}]
+    data = [...data,
+      {name:newContact.name,
+        phone:newContact.phone,
+        email:newContact.email,
+        photo:newContact.photo}]
     setDataContact(data)
   }
 
@@ -31,8 +35,10 @@ const App = () => {
           <ContactForm data={addNewContact}/>
         </Grid>
         <Grid item xs={6}>
-          <Contact data={dataContact} />
-        </Grid> 
+          {dataContact.map((data,i)=> (
+          <Contact data={data} key={i} />
+          ))}
+        </Grid>
       </Grid>
     </div>
   );
